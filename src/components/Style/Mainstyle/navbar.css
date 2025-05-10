@@ -1,0 +1,89 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures it stays above other elements */
+  }
+  
+/* Custom Navbar Styling */
+.custom-navbar {
+    background: linear-gradient(to right, #2C3E50, #4CA1AF); /* Elegant blue gradient */
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Navbar Brand */
+  .custom-navbar .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #FFD700; /* Gold color */
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .custom-navbar .navbar-brand:hover {
+    color: #ffffff;
+  }
+  
+  /* Navbar Links */
+  .custom-navbar .nav-link {
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin-right: 15px;
+    transition: color 0.3s;
+  }
+  
+  .custom-navbar .nav-link:hover {
+    color: #FFD700; /* Gold on hover */
+  }
+  
+  /* Remove Border from Toggle Button */
+  .custom-toggler {
+    border: none !important;
+    outline: none !important;
+    background: transparent !important;
+  }
+  
+  /* Custom Toggle Icon */
+  .custom-toggler-icon {
+    font-size: 24px;
+    color: #FFD700; /* Gold color */
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .custom-toggler:hover .custom-toggler-icon {
+    color: #ffffff;
+  }
+  
+  /* Custom Offcanvas (Right-Side Menu) */
+  .custom-offcanvas {
+    background: #2C3E50; /* Dark blue background */
+    color: white;
+  }
+  
+  /* Offcanvas Header */
+  .custom-offcanvas .offcanvas-header {
+    border-bottom: 1px solid #FFD700;
+  }
+  
+  /* Offcanvas Close Button */
+  .custom-offcanvas .btn-close {
+    color: #FFD700 !important;
+   
+  }
+  
+  /* Custom Login Button */
+  .custom-btn {
+    background-color: #FFD700; /* Gold */
+    color: #2C3E50;
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 5px 15px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .custom-btn:hover {
+    background-color: #ffffff;
+    color: #2C3E50;
+    transform: scale(1.1);
+  }
+  

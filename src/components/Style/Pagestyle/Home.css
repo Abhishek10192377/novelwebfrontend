@@ -1,0 +1,20 @@
+.hero-section {
+    background: linear-gradient(120deg, #f0f8ff, #e6f7ff);
+    border-bottom: 1px solid #ddd;
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+
+
+  

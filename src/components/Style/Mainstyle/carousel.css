@@ -1,0 +1,11 @@
+.carousel-img {
+    height: 450px; /* Adjust this height as needed */
+    /* object-fit: cover; */
+    /* Ensures images cover the given height without distortion */
+  }
+  @media (max-width: 768px) { 
+    .carousel-img {
+
+      height: 200px; /* Adjust height for smaller screens */
+    }
+  }
