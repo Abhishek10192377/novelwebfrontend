@@ -64,6 +64,7 @@ const UserLogin = () => {
 
         setTimeout(() => {
           navigate('/home');
+          window.location.reload();
         }, 1500);
 
         return;
