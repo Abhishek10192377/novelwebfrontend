@@ -18,7 +18,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter basename="/novelwebfrontend"> {/* Set basename to your folder name */}
+      <BrowserRouter >
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
