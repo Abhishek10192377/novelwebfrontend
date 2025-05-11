@@ -60,7 +60,7 @@ const UserRegister = () => {
 
     try {
       setIsLoading(true);
-      await axios.post("http://localhost:3000/api/userregister/insert", formData);
+      await axios.post("https://novelwebbsckend.onrender.com/api/userregister/insert", formData);
       toast.success("User Registered Successfully...");
       setShowModal(true);
       setFormData({ name: "", email: "", password: "", phone: "" });
@@ -83,7 +83,7 @@ const UserRegister = () => {
     }
     try {
       setIsLoading(true);
-      await axios.post("http://localhost:3000/api/userverify", {
+      await axios.post("https://novelwebbsckend.onrender.com/api/userverify", {
         code: verificationCode
       });
       toast.success("Registered Successfully");
