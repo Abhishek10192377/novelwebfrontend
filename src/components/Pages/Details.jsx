@@ -17,7 +17,7 @@ const Details = () => {
 
     const fetchBooks = async () => {
       try {
-        const res = await axios.get(`https://novelwebfrontend.onrender.com/api/books/category/${id}`);
+        const res = await axios.get(`https://novelwebbsckend.onrender.com/api/books/category/${id}`);
         const fetchedBooks = res.data.data;
         setBooks(fetchedBooks);
 
@@ -50,7 +50,7 @@ const Details = () => {
 
     try {
       const res = await axios.post(
-        "https://novelwebfrontend.onrender.com/api/Adduserfavroute",
+        "https://novelwebbsckend.onrender.com/api/Adduserfavroute",
         { bookId },
         {
           headers: {

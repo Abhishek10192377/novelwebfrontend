@@ -40,7 +40,7 @@ const About = () => {
     formData.append('file', file);
 
     try {
-      const response = await axios.post("https://novelwebfrontend.onrender.com/api/usercomment", formData, {
+      const response = await axios.post("https://novelwebbsckend.onrender.com/api/usercomment", formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           'Authorization': `Bearer ${token}`,
@@ -60,7 +60,7 @@ const About = () => {
   /////  show data in testimonial/////////
   const fetchuserdata = async () => {
     try {
-      const response = await axios.get(" https://novelwebfrontend.onrender.com/api/userdatashow")
+      const response = await axios.get(" https://novelwebbsckend.onrender.com/api/userdatashow")
       setreadTestimonial(response.data.userdata)
       console.log(response.data.userdata);
 

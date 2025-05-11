@@ -13,7 +13,7 @@ const Readpage = () => {
 
   const fetchNovels = async () => {
     try {
-      const res = await axios.get(`https://novelwebfrontend.onrender.com/api/novels/read/${id}`);
+      const res = await axios.get(`https://novelwebbsckend.onrender.com/api/novels/read/${id}`);
       const fetchdata = res.data.data;
       setNovels(fetchdata);
 

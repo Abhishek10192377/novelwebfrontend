@@ -11,7 +11,7 @@ const Books = () => {
 
   const fetchCategory = async () => {
     try {
-      const response = await axios.get("https://novelwebfrontend.onrender.com/api/read_category");
+      const response = await axios.get("https://novelwebbsckend.onrender.com/api/read_category");
       setReadCategory(response.data.data);
     } catch (error) {
       console.error("Error fetching categories:", error);
@@ -20,7 +20,7 @@ const Books = () => {
 
   const handleCategoryClick = async (id) => {
     try {
-      const response = await axios.get(`https://novelwebfrontend.onrender.com/api/category_reader/${id}`);
+      const response = await axios.get(`https://novelwebbsckend.onrender.com/api/category_reader/${id}`);
       setTotalReader(response.data.data);
     } catch (error) {
       console.error("Error incrementing category views:", error);

@@ -19,7 +19,7 @@ const Favorite = () => {
     }
 
     try {
-      const res = await axios.get("https://novelwebfrontend.onrender.com/api/userfavrouteshow", {
+      const res = await axios.get("https://novelwebbsckend.onrender.com/api/userfavrouteshow", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -42,7 +42,7 @@ const Favorite = () => {
     setShowModal(false);
 
     try {
-      const res = await axios.delete("https://novelwebfrontend.onrender.com/api/userfavrouteremove", {
+      const res = await axios.delete("https://novelwebbsckend.onrender.com/api/userfavrouteremove", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
