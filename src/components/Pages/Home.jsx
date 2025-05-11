@@ -29,7 +29,7 @@ const Home = () => {
 
     const fetchCategory = async () => {
         try {
-            const response = await axios.get("http://localhost:3000/api/read_category");
+            const response = await axios.get("https://novelwebfrontend.onrender.com/api/read_category");
             setReadCategory(response.data.data);
         } catch (error) {
             console.error("Error fetching categories:", error);
@@ -38,7 +38,7 @@ const Home = () => {
 
     const fetchPopularBook = async () => {
         try {
-            const response = await axios.get("http://localhost:3000/api/books/popular");
+            const response = await axios.get("https://novelwebfrontend.onrender.com/api/books/popular");
             setPopularbook(response.data.data);
         } catch (error) {
             console.error("Error fetching popular books:", error);
@@ -47,7 +47,7 @@ const Home = () => {
 
     const fetchLatestBook = async () => {
         try {
-            const response = await axios.get("http://localhost:3000/api/books/shownewBook");
+            const response = await axios.get("https://novelwebfrontend.onrender.com/api/books/shownewBook");
             setShownewbook(response.data.data);
         } catch (error) {
             console.error("Error fetching new books:", error);
@@ -65,7 +65,7 @@ const Home = () => {
         const token = Cookies.get("token");
 
         if (token) {
-            axios.get("http://localhost:3000/api/protected", {
+            axios.get("https://novelwebfrontend.onrender.com/api/protected", {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }

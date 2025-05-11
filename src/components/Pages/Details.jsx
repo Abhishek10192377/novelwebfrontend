@@ -17,7 +17,7 @@ const Details = () => {
 
     const fetchBooks = async () => {
       try {
-        const res = await axios.get(`http://localhost:3000/api/books/category/${id}`);
+        const res = await axios.get(`https://novelwebfrontend.onrender.com/api/books/category/${id}`);
         const fetchedBooks = res.data.data;
         setBooks(fetchedBooks);
 
@@ -50,7 +50,7 @@ const Details = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/Adduserfavroute",
+        "https://novelwebfrontend.onrender.com/api/Adduserfavroute",
         { bookId },
         {
           headers: {
