@@ -63,7 +63,7 @@ const UserLogin = () => {
         toast.success("Login successfully");
 
         setTimeout(() => {
-          navigate('/home');
+          navigate('/');
           window.location.reload();
         }, 1500);
 

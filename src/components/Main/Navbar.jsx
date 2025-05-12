@@ -32,7 +32,7 @@ const Navbar = () => {
     setTimeout(() => {
       Cookies.remove("token"); 
       Cookies.remove("email"); 
-      navigate("/home"); 
+      navigate("/"); 
       window.location.reload();
     }, 500);
   };
