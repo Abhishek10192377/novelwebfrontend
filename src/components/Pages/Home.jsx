@@ -324,6 +324,7 @@ const Home = () => {
                     </Button>
                 </Modal.Footer>
             </Modal>
+            <Books/>
         </>
     );
 };
