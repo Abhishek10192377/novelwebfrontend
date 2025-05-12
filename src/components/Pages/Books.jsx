@@ -45,7 +45,7 @@ const Books = () => {
 
   return (
     <>
-      <div className="hero text-center text-white  py-4" style={{background:"black"}}>
+      <div className="hero text-center text-white  py-4" style={{ background: "black" }}>
         <h1 className="display-5 fw-bold mb-2" style={{ fontSize: 'clamp(1.8rem, 5vw, 3rem)' }}>
           📚 Book Categories
         </h1>
@@ -55,66 +55,68 @@ const Books = () => {
       </div>
 
       <div className="container border p-5 shadow-lg">
-  <div className="row g-4">
-    {readCategory.map((category) => (
-      <div key={category._id} className="col-sm-12 col-md-6 col-lg-4 text-center">
-        <Link
-          to={`/category/${category._id}`}
-          onClick={() => handleCategoryClick(category._id)}
-          style={{ textDecoration: 'none' }}
-        >
-          {category.image && (
-            <img
-              src={category.image}
-              alt={category.title}
-              className="img-fluid"
-              style={{
-                height: '400px',
-                width: '80%',
-                borderRadius: '8px',
-                margin: '0 auto',
-                display: 'block',
-                border:'5px solid black'
-              }}
-            />
-          )}
-        </Link>
+        <div className="row g-4">
+          {readCategory.map((category) => (
+            <div key={category._id} className="col-sm-12 col-md-6 col-lg-4 text-center">
+              <Link
+                to={`/category/${category._id}`}
+                onClick={() => handleCategoryClick(category._id)}
+                style={{ textDecoration: 'none' }}
+              >
+                {category.image && (
+                  <img
+                    src={category.image}
+                    alt={category.title}
+                    className="img-fluid"
+                    style={{
+                      height: 'auto',
+                      maxHeight: '60vh',
+                      width: '100%',
+                      borderRadius: '8px',
+                      margin: '0 auto',
+                      display: 'block',
+                      border: '5px solid black',
+                      objectFit: 'cover',
+                    }}
+                  />
+                )}
+              </Link>
 
-       
-        <div className="mt-3">
-          <h5
-            className="fw-bold mb-3"
-            style={{ fontSize: 'clamp(1rem, 2.5vw, 1.3rem)' }}
-          >
-            {category.title}
-          </h5>
 
-          <button
-            className="btn btn-gradient btn-sm px-4 py-2"
-            onClick={() => handleShowModal(category)}
-            style={{
-              background: 'linear-gradient(135deg, #007bff, #6610f2)',
-              border: '1px solid black',
-              borderRadius: '25px',
-              color: 'white',
-              fontWeight: '500',
-              transition: 'all 0.3s ease',
-            }}
-            onMouseEnter={(e) =>
-              (e.target.style.background = 'linear-gradient(135deg, #0056b3, #520dc2)')
-            }
-            onMouseLeave={(e) =>
-              (e.target.style.background = 'linear-gradient(135deg, #007bff, #6610f2)')
-            }
-          >
-            View Details
-          </button>
+              <div className="mt-3">
+                <h5
+                  className="fw-bold mb-3"
+                  style={{ fontSize: 'clamp(1rem, 2.5vw, 1.3rem)' }}
+                >
+                  {category.title}
+                </h5>
+
+                <button
+                  className="btn btn-gradient btn-sm px-4 py-2"
+                  onClick={() => handleShowModal(category)}
+                  style={{
+                    background: 'linear-gradient(135deg, #007bff, #6610f2)',
+                    border: '1px solid black',
+                    borderRadius: '25px',
+                    color: 'white',
+                    fontWeight: '500',
+                    transition: 'all 0.3s ease',
+                  }}
+                  onMouseEnter={(e) =>
+                    (e.target.style.background = 'linear-gradient(135deg, #0056b3, #520dc2)')
+                  }
+                  onMouseLeave={(e) =>
+                    (e.target.style.background = 'linear-gradient(135deg, #007bff, #6610f2)')
+                  }
+                >
+                  View Details
+                </button>
+              </div>
+
+            </div>
+          ))}
         </div>
-
       </div>
-    ))}
-  </div>
-</div>
 
 
 

@@ -195,17 +195,19 @@ const Home = () => {
                                     style={{ textDecoration: 'none' }}
                                 >
                                     {category.image && (
-                                        <img
+                                         <img
                                             src={category.image}
                                             alt={category.title}
                                             className="img-fluid"
                                             style={{
-                                                height: '400px',
-                                                width: '80%',
+                                                height: 'auto',
+                                                maxHeight: '60vh',
+                                                width: '100%',
                                                 borderRadius: '8px',
                                                 margin: '0 auto',
                                                 display: 'block',
-                                                border: '5px solid black'
+                                                border: '5px solid black',
+                                                objectFit: 'cover',
                                             }}
                                         />
                                     )}
