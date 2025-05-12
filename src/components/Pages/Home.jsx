@@ -12,20 +12,20 @@ const Home = () => {
     const [readCategory, setReadCategory] = useState([]);
     const [popularbook, setPopularbook] = useState([]);
     const [shownewbook, setShownewbook] = useState([]);
-     const [showModal, setShowModal] = useState(false);
-     const [selectedCategory, setSelectedCategory] = useState(null);
+    const [showModal, setShowModal] = useState(false);
+    const [selectedCategory, setSelectedCategory] = useState(null);
     const [data, setData] = useState(null);
     const [error, setError] = useState(null);
     const navigate = useNavigate();
     const handleShowModal = (category) => {
         setSelectedCategory(category);
         setShowModal(true);
-      };
-    
-      const handleCloseModal = () => {
+    };
+
+    const handleCloseModal = () => {
         setShowModal(false);
         setSelectedCategory(null);
-      };
+    };
 
     const fetchCategory = async () => {
         try {
@@ -60,6 +60,7 @@ const Home = () => {
         fetchLatestBook();
         window.scrollTo(0, 0);
     }, []);
+    
 
     useEffect(() => {
         const token = Cookies.get("token");
@@ -82,7 +83,9 @@ const Home = () => {
 
         fetchCategory();
         window.scrollTo(0, 0);
+
     }, [navigate]);
+
 
     const horizontalSliderSettings = {
         dots: true,
@@ -195,7 +198,7 @@ const Home = () => {
                                     style={{ textDecoration: 'none' }}
                                 >
                                     {category.image && (
-                                         <img
+                                        <img
                                             src={category.image}
                                             alt={category.title}
                                             className="img-fluid"
@@ -250,77 +253,77 @@ const Home = () => {
                 </div>
             </div>
 
-             {/* Modal for Category Details */}
-      <Modal show={showModal} onHide={handleCloseModal} size="lg" centered>
-        <Modal.Header closeButton>
-          <Modal.Title style={{ textAlign: 'center', fontSize: '1.5rem', fontWeight: 'bold', color: '#333' }}>
-            {selectedCategory?.title}
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            textAlign: 'center',
-            padding: '2rem',
-            backgroundColor: '#f9f9f9',
-            borderRadius: '10px',
-          }}
-        >
-          {selectedCategory?.image && (
-            <img
-              src={selectedCategory.image}
-              alt={selectedCategory.title}
-              style={{
-                width: '80%',
-                maxWidth: '200px',
-                height: 'auto',
-                objectFit: 'cover',
-                borderRadius: '8px',
-                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-                marginBottom: '1.5rem',
-              }}
-            />
-          )}
-          <p
-            style={{
-              fontSize: '1.1rem',
-              color: '#555',
-              lineHeight: '1.6',
-              marginBottom: '2rem',
-              maxWidth: '80%',
-              textAlign: 'center',
-            }}
-          >
-            {selectedCategory?.category_description}
-          </p>
-        </Modal.Body>
-        <Modal.Footer
-          style={{
-            justifyContent: 'center',
-            backgroundColor: '#f9f9f9',
-            borderTop: '1px solid #ddd',
-            padding: '1rem 2rem',
-          }}
-        >
-          <Button
-            variant="secondary"
-            onClick={handleCloseModal}
-            style={{
-              padding: '10px 20px',
-              fontSize: '1rem',
-              backgroundColor: '#007bff',
-              borderColor: '#007bff',
-              borderRadius: '5px',
-              fontWeight: 'bold',
-            }}
-          >
-            Close
-          </Button>
-        </Modal.Footer>
-      </Modal>
+            {/* Modal for Category Details */}
+            <Modal show={showModal} onHide={handleCloseModal} size="lg" centered>
+                <Modal.Header closeButton>
+                    <Modal.Title style={{ textAlign: 'center', fontSize: '1.5rem', fontWeight: 'bold', color: '#333' }}>
+                        {selectedCategory?.title}
+                    </Modal.Title>
+                </Modal.Header>
+                <Modal.Body
+                    style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        textAlign: 'center',
+                        padding: '2rem',
+                        backgroundColor: '#f9f9f9',
+                        borderRadius: '10px',
+                    }}
+                >
+                    {selectedCategory?.image && (
+                        <img
+                            src={selectedCategory.image}
+                            alt={selectedCategory.title}
+                            style={{
+                                width: '80%',
+                                maxWidth: '200px',
+                                height: 'auto',
+                                objectFit: 'cover',
+                                borderRadius: '8px',
+                                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                                marginBottom: '1.5rem',
+                            }}
+                        />
+                    )}
+                    <p
+                        style={{
+                            fontSize: '1.1rem',
+                            color: '#555',
+                            lineHeight: '1.6',
+                            marginBottom: '2rem',
+                            maxWidth: '80%',
+                            textAlign: 'center',
+                        }}
+                    >
+                        {selectedCategory?.category_description}
+                    </p>
+                </Modal.Body>
+                <Modal.Footer
+                    style={{
+                        justifyContent: 'center',
+                        backgroundColor: '#f9f9f9',
+                        borderTop: '1px solid #ddd',
+                        padding: '1rem 2rem',
+                    }}
+                >
+                    <Button
+                        variant="secondary"
+                        onClick={handleCloseModal}
+                        style={{
+                            padding: '10px 20px',
+                            fontSize: '1rem',
+                            backgroundColor: '#007bff',
+                            borderColor: '#007bff',
+                            borderRadius: '5px',
+                            fontWeight: 'bold',
+                        }}
+                    >
+                        Close
+                    </Button>
+                </Modal.Footer>
+            </Modal>
         </>
     );
 };
