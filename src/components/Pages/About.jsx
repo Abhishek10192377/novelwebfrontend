@@ -228,15 +228,15 @@ const About = () => {
               <h4 className="d-flex align-items-center mb-3">
                 <span className="me-2">📍</span> Our Location
               </h4>
-              <p className="text-muted">123 Novel Street, Booktown, BK 45678</p>
+              <p className="text-muted">Phagwara Punjab</p>
               <h4 className="d-flex align-items-center mb-3">
                 <span className="me-2">📧</span> Email Us
               </h4>
-              <p className="text-muted">support@novelread.com</p>
+              <p className="text-muted">abhisheksahni0077@gamil.com</p>
               <h4 className="d-flex align-items-center mb-3">
                 <span className="me-2">📞</span> Call Us
               </h4>
-              <p className="text-muted">+123 456 7890</p>
+              <p className="text-muted">+628 457 2866</p>
             </div>
           </div>
         </div>
