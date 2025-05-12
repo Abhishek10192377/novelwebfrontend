@@ -61,7 +61,15 @@ const Home = () => {
         window.scrollTo(0, 0);
     }, []);
     
-
+        const handleCategoryClick = async (id) => {
+    try {
+      const response = await axios.get(`https://novelwebbsckend.onrender.com/api/category_reader/${id}`);
+      setTotalReader(response.data.data);
+    } catch (error) {
+      console.error("Error incrementing category views:", error);
+    }
+  };
+  
     useEffect(() => {
         const token = Cookies.get("token");
 
