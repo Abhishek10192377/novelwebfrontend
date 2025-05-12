@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { Modal, Button } from 'react-bootstrap';
+import { Modal, Button, Spinner } from 'react-bootstrap';
 
 const Books = () => {
   const [readCategory, setReadCategory] = useState([]);
   const [totalReader, setTotalReader] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const [loading, setLoading] = useState(true); // Added loading state
 
   const fetchCategory = async () => {
     try {
@@ -15,6 +16,8 @@ const Books = () => {
       setReadCategory(response.data.data);
     } catch (error) {
       console.error("Error fetching categories:", error);
+    } finally {
+      setLoading(false); // Ensure loading is false after fetch
     }
   };
 
@@ -27,7 +30,6 @@ const Books = () => {
     }
   };
 
-  // Handle the button click to open the modal with category details
   const handleShowModal = (category) => {
     setSelectedCategory(category);
     setShowModal(true);
@@ -44,19 +46,18 @@ const Books = () => {
   }, []);
 
   if (loading) {
-  return (
-    <div className="d-flex justify-content-center align-items-center vh-100">
-      <div className="spinner-border text-primary" role="status">
-        <span className="visually-hidden">Loading...</span>
+    return (
+      <div className="d-flex justify-content-center align-items-center vh-100">
+        <div className="spinner-border text-primary" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
       </div>
-    </div>
-  );
-}
-
+    );
+  }
 
   return (
     <>
-      <div className="hero text-center text-white  py-4" style={{ background: "black" }}>
+      <div className="hero text-center text-white py-4" style={{ background: "black" }}>
         <h1 className="display-5 fw-bold mb-2" style={{ fontSize: 'clamp(1.8rem, 5vw, 3rem)' }}>
           📚 Book Categories
         </h1>
@@ -93,7 +94,6 @@ const Books = () => {
                 )}
               </Link>
 
-
               <div className="mt-3">
                 <h5
                   className="fw-bold mb-3"
@@ -123,15 +123,10 @@ const Books = () => {
                   View Details
                 </button>
               </div>
-
             </div>
           ))}
         </div>
       </div>
-
-
-
-
 
       {/* Modal for Category Details */}
       <Modal show={showModal} onHide={handleCloseModal} size="lg" centered>
