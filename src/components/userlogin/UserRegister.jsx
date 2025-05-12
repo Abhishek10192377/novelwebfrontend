@@ -178,7 +178,13 @@ const UserRegister = () => {
         </div>
 
         <Modal show={showModal} onHide={() => setShowModal(false)} centered>
-          <div className="p-4 text-center">
+          <div className=" position-relative p-4 text-center">
+            <button
+              type="button"
+              className="btn-close position-absolute top-0 end-0 m-2"
+              aria-label="Close"
+              onClick={() => setShowModal(false)}
+            ></button>
             <h5 className="mb-3 text-danger">Enter Verification Code</h5>
             <input
               type="text"
