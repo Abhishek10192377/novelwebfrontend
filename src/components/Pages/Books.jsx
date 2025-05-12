@@ -43,6 +43,17 @@ const Books = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  if (loading) {
+  return (
+    <div className="d-flex justify-content-center align-items-center vh-100">
+      <div className="spinner-border text-primary" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  );
+}
+
+
   return (
     <>
       <div className="hero text-center text-white  py-4" style={{ background: "black" }}>

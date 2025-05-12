@@ -56,15 +56,16 @@ const Readpage = () => {
   const handleNext = () => setCurrentPage((prev) => prev + 1);
   const handleBack = () => setCurrentPage((prev) => (prev > 1 ? prev - 1 : 1));
 
-  if (loading) {
-    return (
-      <div className="text-center mt-5">
-        <div className="spinner-border text-primary" role="status">
-          <span className="visually-hidden">Loading...</span>
-        </div>
+if (loading) {
+  return (
+    <div className="d-flex justify-content-center align-items-center vh-100">
+      <div className="spinner-border text-primary" role="status">
+        <span className="visually-hidden">Loading...</span>
       </div>
-    );
-  }
+    </div>
+  );
+}
+
 
   const novel = novels[0];
 
